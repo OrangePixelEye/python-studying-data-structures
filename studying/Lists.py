@@ -66,3 +66,42 @@ class Lists:
         def print(self):
             """Just prints the array"""
             print(self.base_array)
+
+    class LinkedList:
+        """An linked list is kinda like an array but the data is not located sequentially"""
+
+        def __init__(self):
+            self.head_value = None
+
+        def add(self, element):
+            if self.head_value is None:
+                self.head_value = self.Node(element)
+                return
+            value = self.head_value
+            while value.next_value:
+                value = value.next_value
+            value.next_value = self.Node(element)
+
+        def remove_at(self, index):
+            pass
+
+        def remove(self, element):
+            pass
+
+        def insert(self, element, index):
+            pass
+
+        def get(self, index):
+            pass
+
+        def print(self):
+            print_value = self.head_value
+            while print_value is not None:
+                print(print_value.data_value)
+                print_value = print_value.next_value
+
+        class Node:
+            """Each element in the linked list is called node"""
+            def __init__(self, data_value=None):
+                self.data_value = data_value
+                self.next_value = None
